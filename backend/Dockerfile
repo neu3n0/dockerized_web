@@ -6,6 +6,9 @@ ENV PYTHONDONTWRITEBYTECODE=1
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app
+
+RUN chmod +x entrypoint.sh
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "/usr/src/app/entrypoint.sh" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
