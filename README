@@ -1,0 +1,25 @@
+backend: framework - django + drf, websocket - centrifugo?, celary, redis
+frontend: react (ts)
+db: postgresql
+web-server: nginx
+application server: gunicorn
+
+need create docker image
+
+stage_1:
+    Chat in local storage
+stage_2:
+    List of chats
+    My profile
+stage_3:
+    Auth page
+    Chat description (profile) in Chat window
+
+
+
+stage_1 description:
+    - add nginx and gunicorn to project
+    - add postgresql to django
+    - create chat page
+    - create a view for sending messages
+    - create first image
