@@ -2,6 +2,7 @@ version: '3'
 
 services:
   backend-django:
+    restart: always
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -11,3 +12,14 @@ services:
       - 8000:8000
     env_file:
       - "./.env.dev"
+    depends_on:
+      - db-postgres
+
+  db-postgres:
+    image: postgres:12-alpine
+    environment:
+      - POSTGRES_DB=test_db
+      - POSTGRES_USER=test_admin
+      - POSTGRES_PASSWORD=test_pass
+    ports:
+      - 5432:5432
