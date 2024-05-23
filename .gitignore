@@ -1,2 +1,6 @@
 *.code-workspace
 *log*
+.venv
+venv
+.env
+env
