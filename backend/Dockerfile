@@ -6,6 +6,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app
-RUN pip install django
+RUN pip install -r requirements.txt
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "/usr/src/app/entrypoint.sh" ]
