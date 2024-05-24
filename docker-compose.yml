@@ -21,3 +21,14 @@ services:
       - "./.env.dev"
     ports:
       - 5432:5432
+
+  backend-nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - backend-django
+      - db-postgres
+    ports:
+      - 80:80
