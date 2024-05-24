@@ -27,6 +27,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./static/:/var/www/static/
     depends_on:
       - backend-django
       - db-postgres
